@@ -29,5 +29,7 @@ public class B01SHA256 {
         String data = "Hello, Cryptos!";
         String hash256 = DigestUtils.sha256Hex("Hello, Cryptos!");
         System.out.println(hash256);
+        int a = 0;
+        System.out.println();
     }
 }

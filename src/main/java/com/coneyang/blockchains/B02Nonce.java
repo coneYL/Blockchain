@@ -16,6 +16,8 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.util.StringUtils;
 
 /**
+ * 通过nonce参数调整Sha256生成的摘要信息
+ * 来满足定义的要求(生成的摘要信息的开头与difficulty一致)
  * @author YangLei
  * @version 1.0.0.1
  * @since 2020/7/10 16:50
