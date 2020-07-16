@@ -30,7 +30,7 @@ public class B05Difficulty {
         private int computNonce(Long time) {
             int nonce = 0;
             while (true){
-                String hash = sha256(this.nonce + this.data);
+                String hash = sha256(nonce + this.data);
                 if(StringUtils.startsWithIgnoreCase(hash,this.difficulty)){
                     return nonce;
                 }
