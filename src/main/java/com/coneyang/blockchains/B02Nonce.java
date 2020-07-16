@@ -13,7 +13,7 @@ import org.springframework.util.StringUtils;
 public class B02Nonce {
     public static void main(String[] args) {
         String difficulty = "0";
-        String data = "0Hello, Cryptos!";
+        String data = "Hello, Cryptos!";
         int nonce = proofOfWork(difficulty, data);
         System.out.println(nonce);
 
@@ -22,8 +22,8 @@ public class B02Nonce {
     private static int proofOfWork(String difficulty,String data) {
 
         int nonce = 0;
-        String sha256 = sha256(nonce + data);
         while (true){
+            String sha256 = sha256(nonce + data);
             if(StringUtils.startsWithIgnoreCase(sha256,difficulty)){
                 System.out.println(sha256);
                 return nonce;
