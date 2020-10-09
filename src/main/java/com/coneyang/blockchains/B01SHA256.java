@@ -1,7 +1,5 @@
 package com.coneyang.blockchains;
 
-import org.apache.commons.codec.digest.DigestUtils;
-
 /**
  * SHA256
  * SHA:哈希函数，数据指纹
@@ -14,10 +12,26 @@ import org.apache.commons.codec.digest.DigestUtils;
  */
 public class B01SHA256 {
     public static void main(String[] args) {
-        String data = "Hello, Cryptos!";
-        String hash256 = DigestUtils.sha256Hex("Hello, Cryptos!");
-        System.out.println(hash256);
-        int a = 0;
-        System.out.println();
+        int maxWidth = 1600;
+        int maxHight = 900;
+        while (findY(maxWidth)){
+            maxWidth--;
+        }
+        System.out.println("maxWidth = "+maxWidth);
+        System.out.println("maxHight = "+9 * maxWidth / 16);
+
+        while (findX(maxHight)){
+            maxHight--;
+        }
+        System.out.println("maxWidth = "+16 * maxHight / 9);
+        System.out.println("maxHight = "+maxHight);
+
+    }
+    public static boolean findY(int x){
+        return 9 * x % 16 != 0 ;
+    }
+
+    public static boolean findX(int y){
+        return 16 * y % 9 != 0;
     }
 }

@@ -1,9 +1,11 @@
 package com.coneyang.blockchains;
 
+import com.google.common.collect.Lists;
 import org.springframework.util.StringUtils;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author YangLei
@@ -12,7 +14,14 @@ import java.util.Arrays;
  */
 public class Test {
     public static void main(String[] args) {
-        System.out.println(System.currentTimeMillis());
+        List<String> stringList = Lists.newArrayList("a", "b", "c");
+        for (int i = 0; i < stringList.size(); i++) {
+            if("a".equals(stringList.get(i))){
+                stringList.remove("a");
+            }
+        }
+
+        System.out.println(Arrays.toString(stringList.toArray()));
     }
 
     private static void doWhile() {
